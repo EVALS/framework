@@ -254,5 +254,20 @@ class IronQueue extends Queue implements QueueInterface {
 	{
 		$this->request = $request;
 	}
-
+	
+	/**
+	 * @return void
+	 */ 
+	public function disableEncryption()
+	{
+		$this->shouldEncrypt = false;
+	}
+	
+		/**
+	 * @return void
+	 */ 
+	public function enablyEncryption()
+	{
+		$this->shouldEncrypt = true;
+	}
 }
