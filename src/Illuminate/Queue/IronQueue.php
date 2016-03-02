@@ -208,7 +208,7 @@ class IronQueue extends Queue implements QueueInterface {
 	 * @param  string  $body
 	 * @return string
 	 */
-	protected function parseJobBody($body)
+	public function parseJobBody($body)
 	{
 		return $this->shouldEncrypt ? $this->crypt->decrypt($body) : $body;
 	}
