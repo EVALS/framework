@@ -52,6 +52,18 @@ class MorphTo extends BelongsTo {
 
 		parent::__construct($query, $parent, $foreignKey, $otherKey, $relation);
 	}
+	
+	/**
+         * Get the results of the relationship.
+         *
+         * @return mixed
+         */
+        public function getResults()
+        {
+	    if ( ! $this->otherKey) return;
+
+	    return $this->query->first();
+        }
 
 	/**
 	 * Set the constraints for an eager load of the relation.
